@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Bridge 3D model placeholder</title>
+  <desc id="desc">A stylized 3D truss bridge render based on the bridge-building project.</desc>
+  <rect width="1200" height="750" fill="#f7f8f6"/>
+  <path d="M160 565 L1010 565 L1085 645 L230 645 Z" fill="#9ca09d" stroke="#17201c" stroke-width="6"/>
+  <path d="M215 455 L315 285 L865 285 L1010 455" fill="none" stroke="#4b4f4c" stroke-width="26" stroke-linejoin="round"/>
+  <path d="M180 455 L1018 455" stroke="#4b4f4c" stroke-width="26"/>
+  <path d="M225 565 L1010 565" stroke="#4b4f4c" stroke-width="26"/>
+  <g stroke="#f2b705" stroke-width="14" stroke-linecap="round">
+    <path d="M225 455 L315 565"/>
+    <path d="M315 285 L405 565"/>
+    <path d="M405 285 L520 565"/>
+    <path d="M520 285 L640 565"/>
+    <path d="M640 285 L760 565"/>
+    <path d="M760 285 L900 565"/>
+    <path d="M900 285 L1010 565"/>
+    <path d="M315 565 L405 455 L520 565 L640 455 L760 565 L900 455"/>
+  </g>
+  <g stroke="#303431" stroke-width="16" stroke-linecap="round">
+    <path d="M315 285 L315 565"/>
+    <path d="M405 285 L405 565"/>
+    <path d="M520 285 L520 565"/>
+    <path d="M640 285 L640 565"/>
+    <path d="M760 285 L760 565"/>
+    <path d="M900 285 L900 565"/>
+  </g>
+  <path d="M295 650 L910 650" stroke="#7fa5b8" stroke-width="20" stroke-linecap="round"/>
+  <text x="80" y="115" fill="#17201c" font-family="Arial, sans-serif" font-size="54" font-weight="700">Bridge-Building Project</text>
+  <text x="82" y="163" fill="#5f6b64" font-family="Arial, sans-serif" font-size="28">3D modeled truss bridge</text>
+</svg>

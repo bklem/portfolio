@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brendan Klem | Engineering Portfolio</title>
+    <meta
+      name="description"
+      content="Brendan Klem's engineering portfolio featuring hardware, 3D modeling, software engineering, CAD, Arduino, and coding projects."
+    >
+    <link rel="stylesheet" href="styles.css?v=track-spike-2023">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Engineering portfolio home">
+        <span class="brand-mark" aria-hidden="true">BK</span>
+        <span>
+          <strong>Brendan Klem</strong>
+          <small>Engineering Portfolio</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer Engineering / Hardware / 3D Modeling</p>
+          <h1 id="hero-title">Hello, I'm Brendan Klem.</h1>
+          <p class="hero-text">
+            I am a Computer Engineering student skilled in hardware design, software
+            engineering, coding, and 3D modeling. This portfolio highlights the projects,
+            prototypes, and technical experiments I build across the line between
+            physical devices and software.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View projects</a>
+          </div>
+        </div>
+        <div class="hero-portrait" aria-label="Portrait of Brendan Klem">
+          <img src="images/brendan-portrait.png" alt="Portrait of Brendan Klem">
+        </div>
+      </section>
+
+      <section class="summary-band" aria-label="Portfolio stats">
+        <div>
+          <strong id="total-projects">0</strong>
+          <span>projects</span>
+        </div>
+        <div>
+          <strong id="total-tools">0</strong>
+          <span>tools and methods</span>
+        </div>
+        <div>
+          <strong id="total-categories">0</strong>
+          <span>filter categories</span>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Project Library</p>
+            <h2 id="projects-title">Filter by discipline, tool, or build status.</h2>
+          </div>
+          <label class="search">
+            <span>Search projects</span>
+            <input id="project-search" type="search" placeholder="Search title, tool, tag...">
+          </label>
+        </div>
+
+        <div class="filter-panel">
+          <div>
+            <p class="filter-label">Tags</p>
+            <div class="filter-row" id="tag-filters" aria-label="Project tag filters"></div>
+          </div>
+          <div>
+            <p class="filter-label">Status</p>
+            <div class="filter-row" id="status-filters" aria-label="Project status filters"></div>
+          </div>
+        </div>
+
+        <div class="results-meta">
+          <p id="result-count">Showing 0 projects</p>
+          <button class="text-button" id="clear-filters" type="button">Clear filters</button>
+        </div>
+
+        <div class="project-grid" id="project-grid"></div>
+        <p class="empty-state" id="empty-state" hidden>No projects match those filters yet.</p>
+      </section>
+
+      <section class="section two-column" id="process" aria-labelledby="process-title">
+        <div>
+          <p class="eyebrow">What Each Project Can Show</p>
+          <h2 id="process-title">Make the thinking visible.</h2>
+          <p>
+            Strong engineering portfolios do more than list finished objects. They show
+            constraints, decisions, iterations, testing, and what you learned from the build.
+          </p>
+        </div>
+        <div class="process-list">
+          <article>
+            <span>01</span>
+            <h3>Problem</h3>
+            <p>What were you trying to solve, automate, measure, model, or improve?</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Design</h3>
+            <p>Show sketches, CAD screenshots, architecture diagrams, and tradeoffs.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Build</h3>
+            <p>Document parts, tools, code, wiring, manufacturing, and assembly.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Test</h3>
+            <p>Share results, failures, improvements, and what you would change next.</p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div>
+        <strong>Brendan Klem</strong>
+        <p>Replace this with your email, GitHub, LinkedIn, resume, or school profile.</p>
+      </div>
+      <a class="button secondary" href="mailto:you@example.com">Contact me</a>
+    </footer>
+
+    <script src="projects.js?v=track-spike-2023"></script>
+    <script src="app.js?v=track-spike-2023"></script>
+  </body>
+</html>

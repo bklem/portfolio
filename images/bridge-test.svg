@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Bridge weight test placeholder</title>
+  <desc id="desc">A stylized classroom testing setup with the bridge holding weight.</desc>
+  <rect width="1200" height="750" fill="#d9ebe5"/>
+  <rect x="0" y="500" width="1200" height="250" fill="#2a2927"/>
+  <rect x="150" y="430" width="900" height="45" rx="8" fill="#beb9ad"/>
+  <rect x="255" y="310" width="120" height="120" fill="#f3efe2"/>
+  <rect x="825" y="310" width="120" height="120" fill="#f3efe2"/>
+  <rect x="235" y="285" width="160" height="38" rx="8" fill="#17201c"/>
+  <rect x="805" y="285" width="160" height="38" rx="8" fill="#17201c"/>
+  <line x1="600" y1="238" x2="600" y2="565" stroke="#6c5740" stroke-width="10"/>
+  <circle cx="600" cy="505" r="88" fill="#d8d5cd" stroke="#a4a097" stroke-width="8"/>
+  <rect x="250" y="210" width="700" height="75" fill="none" stroke="#d5b16a" stroke-width="12"/>
+  <g stroke="#d5b16a" stroke-width="10" stroke-linecap="round">
+    <line x1="260" y1="285" x2="345" y2="210"/>
+    <line x1="345" y1="210" x2="430" y2="285"/>
+    <line x1="430" y1="285" x2="515" y2="210"/>
+    <line x1="515" y1="210" x2="600" y2="285"/>
+    <line x1="600" y1="285" x2="685" y2="210"/>
+    <line x1="685" y1="210" x2="770" y2="285"/>
+    <line x1="770" y1="285" x2="855" y2="210"/>
+    <line x1="855" y1="210" x2="940" y2="285"/>
+    <line x1="345" y1="210" x2="345" y2="285"/>
+    <line x1="515" y1="210" x2="515" y2="285"/>
+    <line x1="685" y1="210" x2="685" y2="285"/>
+    <line x1="855" y1="210" x2="855" y2="285"/>
+  </g>
+  <rect x="510" y="165" width="180" height="70" rx="12" fill="#333333"/>
+  <text x="90" y="95" fill="#17201c" font-family="Arial, sans-serif" font-size="52" font-weight="700">Physical bridge test</text>
+  <text x="92" y="140" fill="#5f6b64" font-family="Arial, sans-serif" font-size="28">Replace this placeholder with your classroom test photo</text>
+</svg>
