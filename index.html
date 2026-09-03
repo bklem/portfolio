@@ -8,7 +8,7 @@
       name="description"
       content="Brendan Klem's engineering portfolio featuring hardware, 3D modeling, software engineering, CAD, Arduino, and coding projects."
     >
-    <link rel="stylesheet" href="styles.css?v=track-spike-2023">
+    <link rel="stylesheet" href="styles.css?v=dropbox-image-final-up">
   </head>
   <body>
     <header class="site-header">
@@ -20,8 +20,9 @@
         </span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#projects">Projects</a>
-        <a href="#process">Process</a>
+        <a href="#main-work">Main Work</a>
+        <a href="#side-projects">3D Prints</a>
+        <a href="#uploaded-work">Archive</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -29,16 +30,22 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Computer Engineering / Hardware / 3D Modeling</p>
+          <p class="eyebrow">Computer Engineering Portfolio</p>
           <h1 id="hero-title">Hello, I'm Brendan Klem.</h1>
           <p class="hero-text">
             I am a Computer Engineering student skilled in hardware design, software
             engineering, coding, and 3D modeling. This portfolio highlights the projects,
-            prototypes, and technical experiments I build across the line between
-            physical devices and software.
+            prototypes, and technical experiments I build across hardware, software,
+            CAD, and physical systems.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#projects">View projects</a>
+            <a class="button primary" href="#main-work">Main work</a>
+            <a class="button secondary" href="#side-projects">3D prints</a>
+          </div>
+          <div class="hero-highlights" aria-label="Portfolio focus areas">
+            <span>Hardware prototypes</span>
+            <span>Human-centered design</span>
+            <span>CAD and fabrication</span>
           </div>
         </div>
         <div class="hero-portrait" aria-label="Portrait of Brendan Klem">
@@ -46,84 +53,66 @@
         </div>
       </section>
 
-      <section class="summary-band" aria-label="Portfolio stats">
+      <section class="focus-strip" aria-label="Portfolio focus areas">
         <div>
-          <strong id="total-projects">0</strong>
-          <span>projects</span>
+          <span>01</span>
+          <strong>Hardware</strong>
+          <p>Circuits, prototypes, sensors, and physical system builds.</p>
         </div>
         <div>
-          <strong id="total-tools">0</strong>
-          <span>tools and methods</span>
+          <span>02</span>
+          <strong>Software</strong>
+          <p>Applications, code projects, automation, and engineering tools.</p>
         </div>
         <div>
-          <strong id="total-categories">0</strong>
-          <span>filter categories</span>
+          <span>03</span>
+          <strong>Design</strong>
+          <p>CAD, testing, human-centered thinking, and fabrication.</p>
         </div>
       </section>
 
-      <section class="section" id="projects" aria-labelledby="projects-title">
+      <section class="section main-work" id="main-work" aria-labelledby="main-work-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Project Library</p>
-            <h2 id="projects-title">Filter by discipline, tool, or build status.</h2>
-          </div>
-          <label class="search">
-            <span>Search projects</span>
-            <input id="project-search" type="search" placeholder="Search title, tool, tag...">
-          </label>
-        </div>
-
-        <div class="filter-panel">
-          <div>
-            <p class="filter-label">Tags</p>
-            <div class="filter-row" id="tag-filters" aria-label="Project tag filters"></div>
-          </div>
-          <div>
-            <p class="filter-label">Status</p>
-            <div class="filter-row" id="status-filters" aria-label="Project status filters"></div>
+            <p class="eyebrow">Main Projects</p>
+            <h2 id="main-work-title">Main projects.</h2>
+            <p class="section-intro">
+              A focused collection of my larger engineering work, including hardware,
+              software, sensor systems, and technical documentation.
+            </p>
           </div>
         </div>
 
-        <div class="results-meta">
-          <p id="result-count">Showing 0 projects</p>
-          <button class="text-button" id="clear-filters" type="button">Clear filters</button>
-        </div>
-
-        <div class="project-grid" id="project-grid"></div>
-        <p class="empty-state" id="empty-state" hidden>No projects match those filters yet.</p>
+        <div class="main-project-grid" id="main-project-grid"></div>
       </section>
 
-      <section class="section two-column" id="process" aria-labelledby="process-title">
-        <div>
-          <p class="eyebrow">What Each Project Can Show</p>
-          <h2 id="process-title">Make the thinking visible.</h2>
-          <p>
-            Strong engineering portfolios do more than list finished objects. They show
-            constraints, decisions, iterations, testing, and what you learned from the build.
-          </p>
+      <section class="section side-section" id="side-projects" aria-labelledby="side-projects-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">3D Prints</p>
+            <h2 id="side-projects-title">3D printing and fabrication projects.</h2>
+            <p class="section-intro">
+              Personal product builds, gifts, and small fabrication projects. They stay
+              connected to the portfolio without being the first thing people see.
+            </p>
+          </div>
+          <p class="side-note" id="side-result-count">0 3D prints</p>
         </div>
-        <div class="process-list">
-          <article>
-            <span>01</span>
-            <h3>Problem</h3>
-            <p>What were you trying to solve, automate, measure, model, or improve?</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Design</h3>
-            <p>Show sketches, CAD screenshots, architecture diagrams, and tradeoffs.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Build</h3>
-            <p>Document parts, tools, code, wiring, manufacturing, and assembly.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Test</h3>
-            <p>Share results, failures, improvements, and what you would change next.</p>
-          </article>
+        <div class="side-project-grid" id="side-project-grid"></div>
+      </section>
+
+      <section class="section archive-section" id="uploaded-work" aria-labelledby="uploaded-work-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Uploaded Archive</p>
+            <h2 id="uploaded-work-title">School design work already added.</h2>
+            <p class="section-intro">
+              Existing 2022 school projects stay available here as supporting evidence
+              while the main section waits for newer uploads.
+            </p>
+          </div>
         </div>
+        <div class="archive-grid" id="archive-grid"></div>
       </section>
 
     </main>
@@ -131,12 +120,18 @@
     <footer class="site-footer" id="contact">
       <div>
         <strong>Brendan Klem</strong>
-        <p>Replace this with your email, GitHub, LinkedIn, resume, or school profile.</p>
+        <p>
+          <a href="mailto:bklem@charlotte.edu">bklem@charlotte.edu</a>
+          <span>linkedin.com/in/brendan-klem</span>
+        </p>
       </div>
-      <a class="button secondary" href="mailto:you@example.com">Contact me</a>
+      <div class="contact-actions" aria-label="Contact links">
+        <a class="button secondary" href="mailto:bklem@charlotte.edu">Email</a>
+        <a class="button secondary" href="https://linkedin.com/in/brendan-klem" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
     </footer>
 
-    <script src="projects.js?v=track-spike-2023"></script>
-    <script src="app.js?v=track-spike-2023"></script>
+    <script src="projects.js?v=dropbox-image-final-up"></script>
+    <script src="app.js?v=dropbox-image-final-up"></script>
   </body>
 </html>

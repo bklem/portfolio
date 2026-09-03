@@ -1,76 +1,41 @@
 const state = {
-  tag: "All",
-  status: "All",
-  search: "",
   imageIndexes: {}
 };
 
-const grid = document.querySelector("#project-grid");
-const tagFilters = document.querySelector("#tag-filters");
-const statusFilters = document.querySelector("#status-filters");
-const resultCount = document.querySelector("#result-count");
-const emptyState = document.querySelector("#empty-state");
-const searchInput = document.querySelector("#project-search");
-const clearFilters = document.querySelector("#clear-filters");
+const mainGrid = document.querySelector("#main-project-grid");
+const sideGrid = document.querySelector("#side-project-grid");
+const archiveGrid = document.querySelector("#archive-grid");
+const sideResultCount = document.querySelector("#side-result-count");
 
-const unique = (items) => [...new Set(items)].sort((a, b) => a.localeCompare(b));
-const allTags = unique(projects.flatMap((project) => project.tags));
-const allStatuses = unique(projects.map((project) => project.status));
-const allTools = unique(projects.flatMap((project) => project.tools));
-const projectKey = (project) => project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const sideProjectTitles = new Set([
+  "Green Level 3D-Printed Keychains",
+  "Dropbox Hitch Cover",
+  "Track Spike",
+  "DECA Product Presentation Model",
+  "College Logo Keychains",
+  "Alpha Tau Omega Can Opener",
+  "Berserk Chain Pendant"
+]);
 
-function createFilterButton(label, type) {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "filter-chip";
-  button.textContent = label;
-  button.setAttribute("aria-pressed", String(state[type] === label));
-  button.addEventListener("click", () => {
-    state[type] = label;
-    render();
-  });
-  return button;
+const mainProjectTitles = new Set([
+  "Grace Intelligence Sensor Logger Internship"
+]);
+
+function projectKey(project) {
+  return project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
-function renderFilters() {
-  tagFilters.replaceChildren(
-    ...["All", ...allTags].map((tag) => createFilterButton(tag, "tag"))
-  );
-  statusFilters.replaceChildren(
-    ...["All", ...allStatuses].map((status) => createFilterButton(status, "status"))
-  );
+function isSideProject(project) {
+  return sideProjectTitles.has(project.title);
 }
 
-function projectMatches(project) {
-  const searchable = [
-    project.title,
-    project.summary,
-    project.status,
-    project.context,
-    project.year,
-    project.role,
-    project.highlight,
-    ...project.tags,
-    ...project.tools
-  ]
-    .join(" ")
-    .toLowerCase();
-
-  const tagMatch = state.tag === "All" || project.tags.includes(state.tag);
-  const statusMatch = state.status === "All" || project.status === state.status;
-  const searchMatch = searchable.includes(state.search.trim().toLowerCase());
-
-  return tagMatch && statusMatch && searchMatch;
+function isMainProject(project) {
+  return mainProjectTitles.has(project.title);
 }
 
 function fallbackVisual(project) {
   return `
     <div class="project-visual fallback-visual" aria-hidden="true">
-      <span class="visual-node node-a"></span>
-      <span class="visual-node node-b"></span>
-      <span class="visual-node node-c"></span>
-      <span class="visual-line line-a"></span>
-      <span class="visual-line line-b"></span>
       <span class="visual-badge">${project.tags[0]}</span>
     </div>
   `;
@@ -84,6 +49,7 @@ function projectVisual(project) {
   const key = projectKey(project);
   const activeIndex = state.imageIndexes[key] || 0;
   const activeImage = project.images[activeIndex] || project.images[0];
+  const fitClass = activeImage.fit === "tall" ? " image-visual-tall" : "";
   const controls =
     project.images.length > 1
       ? `
@@ -95,8 +61,6 @@ function projectVisual(project) {
       `
       : "";
 
-  const fitClass = activeImage.fit === "tall" ? " image-visual-tall" : "";
-
   return `
     <div class="project-visual image-visual${fitClass}">
       <img src="${activeImage.src}" alt="${activeImage.alt || project.title}" loading="lazy">
@@ -105,23 +69,46 @@ function projectVisual(project) {
   `;
 }
 
-function projectCard(project) {
-  const article = document.createElement("article");
-  article.className = `project-card accent-${project.accent}`;
+function meta(project) {
+  return `
+    <div class="project-meta">
+      <span>${project.status}</span>
+      <span class="project-context">${project.context || "Personal"}</span>
+      <span>${project.year}</span>
+    </div>
+  `;
+}
 
-  const links = project.links
-    .map((link) => `<a href="${link.url}" aria-label="${project.title} ${link.label}">${link.label}</a>`)
-    .join("");
-  const projectLinks = links ? `<div class="project-links">${links}</div>` : "";
+function tagList(project) {
+  return `
+    <div class="tag-list">
+      ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
+    </div>
+  `;
+}
+
+function projectLinks(project) {
+  if (!project.links || project.links.length === 0) {
+    return "";
+  }
+
+  return `
+    <div class="project-links">
+      ${project.links
+        .map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`)
+        .join("")}
+    </div>
+  `;
+}
+
+function projectCard(project, variant = "standard") {
+  const article = document.createElement("article");
+  article.className = `project-card project-card-${variant} project-${projectKey(project)} accent-${project.accent}`;
 
   article.innerHTML = `
     ${projectVisual(project)}
     <div class="project-body">
-      <div class="project-meta">
-        <span>${project.status}</span>
-        <span class="project-context">${project.context || "Personal"}</span>
-        <span>${project.year}</span>
-      </div>
+      ${meta(project)}
       <h3>${project.title}</h3>
       <p>${project.summary}</p>
       <dl>
@@ -134,50 +121,50 @@ function projectCard(project) {
           <dd>${project.highlight}</dd>
         </div>
       </dl>
-      <div class="tag-list">
-        ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
-      </div>
-      <div class="tool-list">
-        ${project.tools.map((tool) => `<span>${tool}</span>`).join("")}
-      </div>
-      ${projectLinks}
+      ${tagList(project)}
+      ${projectLinks(project)}
     </div>
   `;
 
   return article;
 }
 
-function updateStats() {
-  document.querySelector("#total-projects").textContent = projects.length;
-  document.querySelector("#total-tools").textContent = allTools.length;
-  document.querySelector("#total-categories").textContent = allTags.length;
+function compactCard(project) {
+  const article = document.createElement("article");
+  article.className = `project-card project-card-compact project-${projectKey(project)} accent-${project.accent}`;
+
+  article.innerHTML = `
+    ${projectVisual(project)}
+    <div class="project-body">
+      ${meta(project)}
+      <h3>${project.title}</h3>
+      <p>${project.summary}</p>
+      ${tagList(project)}
+      ${projectLinks(project)}
+    </div>
+  `;
+
+  return article;
 }
 
 function render() {
-  renderFilters();
-  const visibleProjects = projects.filter(projectMatches);
+  const sideProjects = projects.filter(isSideProject);
+  const mainProjects = projects.filter(isMainProject);
+  const archivedProjects = projects.filter(
+    (project) => !isSideProject(project) && !isMainProject(project)
+  );
 
-  grid.replaceChildren(...visibleProjects.map(projectCard));
-  resultCount.textContent = `Showing ${visibleProjects.length} ${
-    visibleProjects.length === 1 ? "project" : "projects"
+  mainGrid.replaceChildren(
+    ...mainProjects.map((project) => projectCard(project, "main"))
+  );
+  sideGrid.replaceChildren(...sideProjects.map(compactCard));
+  archiveGrid.replaceChildren(...archivedProjects.map(compactCard));
+  sideResultCount.textContent = `${sideProjects.length} ${
+    sideProjects.length === 1 ? "3D print" : "3D prints"
   }`;
-  emptyState.hidden = visibleProjects.length > 0;
 }
 
-searchInput.addEventListener("input", (event) => {
-  state.search = event.target.value;
-  render();
-});
-
-clearFilters.addEventListener("click", () => {
-  state.tag = "All";
-  state.status = "All";
-  state.search = "";
-  searchInput.value = "";
-  render();
-});
-
-grid.addEventListener("click", (event) => {
+function handleGalleryClick(event) {
   const button = event.target.closest("[data-gallery-action]");
 
   if (!button) {
@@ -196,7 +183,10 @@ grid.addEventListener("click", (event) => {
   state.imageIndexes[key] =
     (currentIndex + direction + project.images.length) % project.images.length;
   render();
-});
+}
 
-updateStats();
+sideGrid.addEventListener("click", handleGalleryClick);
+archiveGrid.addEventListener("click", handleGalleryClick);
+mainGrid.addEventListener("click", handleGalleryClick);
+
 render();

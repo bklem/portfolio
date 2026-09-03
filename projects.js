@@ -204,9 +204,137 @@ const projects = [
     images: [
       {
         src: "images/track-spike.png",
-        alt: "CAD render of a gold track spike"
+        alt: "CAD render of a gold track spike",
+        fit: "tall"
       }
     ],
     accent: "yellow"
+  },
+  {
+    title: "Grace Intelligence Sensor Logger Internship",
+    summary:
+      "An internship project series focused on building a wearable sensor logging system, starting with Arduino pressure testing and progressing to an ESP32 Bluetooth data logger with a user-friendly desktop app.",
+    tags: ["Internship", "Hardware", "ESP32", "Software Engineering", "Sensors"],
+    tools: ["Arduino Uno", "ESP32-S3", "M5Stick S3", "Bluetooth LE", "Python", "CSV Logging"],
+    status: "Finished",
+    context: "Grace Intelligence Internship",
+    year: "2026",
+    role: "Tested pressure and vibration sensors, built Arduino and ESP32 circuits, integrated onboard IMU data, developed serial and Bluetooth logging workflows, and documented each stage through technical reports.",
+    highlight:
+      "Combined hardware testing, embedded programming, wireless communication, and software usability into a system that records pressure, vibration, gyroscope, and accelerometer data.",
+    links: [
+      {
+        label: "Pressure Sensor Testing",
+        url: "reports/grace-pressure-sensor-initial-testing.pdf"
+      },
+      {
+        label: "Arduino Data Logging",
+        url: "reports/grace-arduino-serial-data-logging.pdf"
+      },
+      {
+        label: "ESP32 Integration",
+        url: "reports/grace-esp32-integration.pdf"
+      },
+      {
+        label: "ESP32 Bluetooth",
+        url: "reports/grace-esp32-bluetooth.pdf"
+      }
+    ],
+    images: [
+      {
+        src: "images/report-extracts/esp32-bluetooth-page-11-image-1.png",
+        alt: "M5 Sensor Logger desktop app interface"
+      }
+    ],
+    accent: "purple"
+  },
+  {
+    title: "DECA Product Presentation Model",
+    summary:
+      "A 3D model created from a friend's DECA product concept so the idea could be clearly presented at a DECA competition.",
+    tags: ["3D Modeling", "CAD", "Product Design", "DECA"],
+    tools: ["CAD", "3D Modeling", "Presentation Model", "Product Visualization"],
+    status: "Finished",
+    context: "Personal",
+    year: "2023",
+    role: "Replicated the product concept as a detailed 3D model, shaping the main body, panel layout, and presentation-ready details.",
+    highlight:
+      "Helped turn a product idea into a visual model that could support a competition presentation and make the concept easier to understand.",
+    links: [],
+    images: [
+      {
+        src: "images/deca-product-model.png?v=right-panel-gray",
+        alt: "CAD render of a DECA product presentation model"
+      }
+    ],
+    accent: "teal"
+  },
+  {
+    title: "College Logo Keychains",
+    summary:
+      "A pair of custom college-themed keychains modeled in 2024 and made as gifts for friends.",
+    tags: ["3D Printing", "CAD", "Personal Project", "Product Design"],
+    tools: ["CAD", "3D Modeling", "3D Printing", "Custom Gifts"],
+    status: "Finished",
+    context: "Personal",
+    year: "2024",
+    role: "Modeled the keychain bodies, logo details, color layouts, and hanging loops so each design could work as a personalized printed gift.",
+    highlight:
+      "Created clean school-themed designs that turned familiar college branding into compact, giftable 3D printed objects.",
+    links: [],
+    images: [
+      {
+        src: "images/college-keychain-georgia.png",
+        alt: "Red, white, and black college logo keychain 3D model"
+      },
+      {
+        src: "images/college-keychain-georgia-tech.png",
+        alt: "Yellow Georgia Tech alumni keychain 3D model"
+      }
+    ],
+    accent: "red"
+  },
+  {
+    title: "Berserk Chain Pendant",
+    summary:
+      "A custom pendant inspired by the show Berserk, modeled as a small 3D printed piece designed to hang from a chain.",
+    tags: ["3D Printing", "CAD", "Personal Project", "Pendant"],
+    tools: ["CAD", "3D Modeling", "3D Printing", "Jewelry Design"],
+    status: "Finished",
+    context: "Personal",
+    year: "2024",
+    role: "Modeled the pendant symbol, loop, and chain attachment point while keeping the design printable and wearable.",
+    highlight:
+      "Turned a recognizable show-inspired symbol into a compact pendant form made for a chain.",
+    links: [],
+    images: [
+      {
+        src: "images/berserk-pendant.png",
+        alt: "CAD render of a Berserk-inspired pendant for a chain",
+        fit: "tall"
+      }
+    ],
+    accent: "orange"
+  },
+  {
+    title: "Alpha Tau Omega Can Opener",
+    summary:
+      "A custom can opener modeled in 2026 for Alpha Tau Omega, created as a fun personal fraternity-themed 3D print.",
+    tags: ["3D Printing", "CAD", "Personal Project", "Product Design"],
+    tools: ["CAD", "3D Modeling", "3D Printing", "Functional Design"],
+    status: "Finished",
+    context: "Personal",
+    year: "2026",
+    role: "Designed the opener geometry, handle shape, and Alpha Tau Omega lettering while balancing the themed look with a functional form.",
+    highlight:
+      "Combined a practical can-opener shape with fraternity branding to make a personalized functional print.",
+    links: [],
+    images: [
+      {
+        src: "images/ato-can-opener.png",
+        alt: "CAD render of an Alpha Tau Omega can opener"
+      }
+    ],
+    accent: "blue"
   }
 ].reverse();
