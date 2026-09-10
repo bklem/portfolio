@@ -335,10 +335,9 @@ h3 {
 }
 
 .side-project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
-  align-items: stretch;
+  display: block;
+  column-count: 3;
+  column-gap: 0.9rem;
 }
 
 .archive-section {
@@ -407,20 +406,54 @@ h3 {
   height: clamp(24rem, 38vw, 32rem);
 }
 
-.side-project-grid .project-track-spike .image-visual,
+.side-project-grid .project-card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 0.9rem;
+  break-inside: avoid;
+}
+
+.side-project-grid .project-green-level-3d-printed-keychains .image-visual {
+  height: clamp(16rem, 18vw, 19rem);
+}
+
+.side-project-grid .project-dropbox-hitch-cover .image-visual {
+  height: clamp(19rem, 22vw, 24rem);
+}
+
+.side-project-grid .project-track-spike .image-visual {
+  height: clamp(25rem, 34vw, 36rem);
+}
+
+.side-project-grid .project-deca-product-presentation-model .image-visual {
+  height: clamp(16rem, 17vw, 18rem);
+}
+
+.side-project-grid .project-college-logo-keychains .image-visual {
+  height: clamp(20rem, 24vw, 26rem);
+}
+
 .side-project-grid .project-berserk-chain-pendant .image-visual {
-  height: clamp(25rem, 28vw, 30rem);
+  height: clamp(27rem, 38vw, 40rem);
+}
+
+.side-project-grid .project-alpha-tau-omega-can-opener .image-visual {
+  height: clamp(17rem, 18vw, 20rem);
 }
 
 .side-project-grid .project-track-spike .image-visual img,
 .side-project-grid .project-berserk-chain-pendant .image-visual img {
-  max-inline-size: calc(100% - 1.25rem);
-  max-block-size: calc(100% - 1.25rem);
+  max-inline-size: calc(100% - 1.5rem);
+  max-block-size: calc(100% - 1.5rem);
+}
+
+.side-project-grid .project-weight-plate-golf-ball-marker .image-visual {
+  height: clamp(21rem, 29vw, 31rem);
 }
 
 .side-project-grid .project-weight-plate-golf-ball-marker .image-visual img {
-  max-inline-size: calc(100% - 2.75rem);
-  max-block-size: calc(100% - 2.75rem);
+  max-inline-size: calc(100% - 3rem);
+  max-block-size: calc(100% - 3rem);
 }
 
 .side-project-grid .project-dropbox-hitch-cover .image-visual img {
@@ -617,55 +650,6 @@ h3 {
   justify-self: end;
 }
 
-@media (min-width: 1180px) {
-  .side-project-grid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .side-project-grid .project-card {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .side-project-grid .project-body {
-    flex: 1;
-  }
-
-  .side-project-grid .project-green-level-3d-printed-keychains,
-  .side-project-grid .project-college-logo-keychains {
-    grid-column: span 5;
-  }
-
-  .side-project-grid .project-dropbox-hitch-cover,
-  .side-project-grid .project-deca-product-presentation-model,
-  .side-project-grid .project-weight-plate-golf-ball-marker,
-  .side-project-grid .project-alpha-tau-omega-can-opener {
-    grid-column: span 4;
-  }
-
-  .side-project-grid .project-track-spike,
-  .side-project-grid .project-berserk-chain-pendant {
-    grid-column: span 3;
-  }
-
-  .side-project-grid .project-green-level-3d-printed-keychains .image-visual,
-  .side-project-grid .project-college-logo-keychains .image-visual {
-    height: clamp(18rem, 19vw, 22rem);
-  }
-
-  .side-project-grid .project-dropbox-hitch-cover .image-visual,
-  .side-project-grid .project-deca-product-presentation-model .image-visual,
-  .side-project-grid .project-weight-plate-golf-ball-marker .image-visual,
-  .side-project-grid .project-alpha-tau-omega-can-opener .image-visual {
-    height: clamp(17rem, 17vw, 20rem);
-  }
-
-  .side-project-grid .project-track-spike .image-visual,
-  .side-project-grid .project-berserk-chain-pendant .image-visual {
-    height: clamp(24rem, 26vw, 29rem);
-  }
-}
-
 @media (max-width: 1100px) {
   .archive-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -699,7 +683,7 @@ h3 {
   }
 
   .side-project-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-count: 2;
   }
 }
 
@@ -723,6 +707,10 @@ h3 {
   .archive-grid,
   .process-list {
     grid-template-columns: 1fr;
+  }
+
+  .side-project-grid {
+    column-count: 1;
   }
 
   .focus-strip div {

@@ -6,6 +6,7 @@ const mainGrid = document.querySelector("#main-project-grid");
 const sideGrid = document.querySelector("#side-project-grid");
 const archiveGrid = document.querySelector("#archive-grid");
 const sideResultCount = document.querySelector("#side-result-count");
+const sidePrintCount = 19;
 
 const sideProjectTitles = new Set([
   "Green Level 3D-Printed Keychains",
@@ -148,8 +149,29 @@ function compactCard(project) {
   return article;
 }
 
+function masonryOrder(items, columns = 3) {
+  const ordered = [];
+  const rows = Math.ceil(items.length / columns);
+
+  for (let column = 0; column < columns; column += 1) {
+    for (let row = 0; row < rows; row += 1) {
+      const item = items[row * columns + column];
+
+      if (item) {
+        ordered.push(item);
+      }
+    }
+  }
+
+  return ordered;
+}
+
 function render() {
-  const sideProjects = projects.filter(isSideProject);
+  const sideProjects = masonryOrder(
+    projects
+      .filter(isSideProject)
+      .sort((a, b) => Number(b.year) - Number(a.year))
+  );
   const mainProjects = projects.filter(isMainProject);
   const archivedProjects = projects.filter(
     (project) => !isSideProject(project) && !isMainProject(project)
@@ -160,9 +182,8 @@ function render() {
   );
   sideGrid.replaceChildren(...sideProjects.map(compactCard));
   archiveGrid.replaceChildren(...archivedProjects.map(compactCard));
-  sideResultCount.textContent = `${sideProjects.length} ${
-    sideProjects.length === 1 ? "3D print" : "3D prints"
-  }`;
+  sideResultCount.textContent = `${sidePrintCount} 3D prints`;
+
 }
 
 function handleGalleryClick(event) {
