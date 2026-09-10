@@ -216,13 +216,23 @@ h3 {
 .hero-portrait {
   align-self: stretch;
   display: grid;
-  place-items: end center;
-  padding: clamp(2rem, 5vw, 4rem);
-  background: var(--panel-warm);
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(2.75rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+  background: transparent;
+}
+
+.resume-button {
+  align-self: start;
+  justify-self: center;
+  margin-top: 4.1rem;
 }
 
 .hero-portrait img {
   display: block;
+  align-self: center;
+  transform: translateY(-3.95rem);
   width: min(100%, 23rem);
   aspect-ratio: 1;
   border: 1px solid rgba(17, 20, 18, 0.14);
