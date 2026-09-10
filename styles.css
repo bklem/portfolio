@@ -338,6 +338,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.9rem;
+  align-items: start;
 }
 
 .archive-section {
@@ -406,20 +407,20 @@ h3 {
   height: clamp(24rem, 38vw, 32rem);
 }
 
-.side-project-grid .project-track-spike,
-.side-project-grid .project-berserk-chain-pendant {
-  grid-row: span 2;
-}
-
 .side-project-grid .project-track-spike .image-visual,
 .side-project-grid .project-berserk-chain-pendant .image-visual {
-  height: clamp(34rem, 50vw, 44rem);
+  height: clamp(25rem, 28vw, 30rem);
 }
 
 .side-project-grid .project-track-spike .image-visual img,
 .side-project-grid .project-berserk-chain-pendant .image-visual img {
-  max-inline-size: calc(100% - 0.75rem);
-  max-block-size: calc(100% - 0.75rem);
+  max-inline-size: calc(100% - 1.25rem);
+  max-block-size: calc(100% - 1.25rem);
+}
+
+.side-project-grid .project-weight-plate-golf-ball-marker .image-visual img {
+  max-inline-size: calc(100% - 2.75rem);
+  max-block-size: calc(100% - 2.75rem);
 }
 
 .side-project-grid .project-dropbox-hitch-cover .image-visual img {
@@ -614,6 +615,12 @@ h3 {
 
 .site-footer .button {
   justify-self: end;
+}
+
+@media (min-width: 1180px) {
+  .side-project-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 1100px) {
