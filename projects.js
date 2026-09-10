@@ -47,16 +47,16 @@ const projects = [
     links: [],
     images: [
       {
+        src: "images/onshape-scissors.png",
+        alt: "Onshape 3D model of movable scissors"
+      },
+      {
         src: "images/onshape-hammer.png",
         alt: "Onshape 3D model of a hammer"
       },
       {
         src: "images/onshape-screwdriver.png",
         alt: "Onshape 3D model of a screwdriver"
-      },
-      {
-        src: "images/onshape-scissors.png",
-        alt: "Onshape 3D model of movable scissors"
       }
     ],
     accent: "red"
@@ -315,6 +315,27 @@ const projects = [
       }
     ],
     accent: "orange"
+  },
+  {
+    title: "Weight Plate Golf Ball Marker",
+    summary:
+      "A personal 3D printed golf ball marker designed to look like a miniature weight plate.",
+    tags: ["3D Printing", "CAD", "Personal Project", "Golf"],
+    tools: ["CAD", "3D Modeling", "3D Printing", "Product Design"],
+    status: "Finished",
+    context: "Personal",
+    year: "2026",
+    role: "Modeled the weight-plate shape, raised lettering, center opening, and circular details while keeping the design compact enough to work as a golf ball marker.",
+    highlight:
+      "Combined a gym-inspired weight plate look with a functional golf accessory format.",
+    links: [],
+    images: [
+      {
+        src: "images/weight-plate-golf-marker.png",
+        alt: "CAD render of a weight plate golf ball marker"
+      }
+    ],
+    accent: "yellow"
   },
   {
     title: "Alpha Tau Omega Can Opener",

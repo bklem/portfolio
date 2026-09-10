@@ -14,7 +14,8 @@ const sideProjectTitles = new Set([
   "DECA Product Presentation Model",
   "College Logo Keychains",
   "Alpha Tau Omega Can Opener",
-  "Berserk Chain Pendant"
+  "Berserk Chain Pendant",
+  "Weight Plate Golf Ball Marker"
 ]);
 
 const mainProjectTitles = new Set([
