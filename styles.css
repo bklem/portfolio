@@ -206,7 +206,7 @@ h3 {
 .hero-highlights span {
   min-height: 3rem;
   padding: 0.7rem;
-  border: 1px solid rgba(36, 49, 61, 0.16);
+  border: 0;
   border-top: 4px solid var(--green);
   background: rgba(255, 255, 255, 0.58);
   font-size: 0.82rem;
@@ -214,6 +214,7 @@ h3 {
 }
 
 .hero-portrait {
+  position: relative;
   align-self: stretch;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -227,19 +228,30 @@ h3 {
   align-self: start;
   justify-self: center;
   margin-top: 4.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.portrait-stage {
+  position: relative;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: min(100%, 23rem);
+  transform: translateY(-3.95rem);
 }
 
 .hero-portrait img {
   display: block;
-  align-self: center;
-  transform: translateY(-3.95rem);
-  width: min(100%, 23rem);
+  width: 100%;
   aspect-ratio: 1;
   border: 1px solid rgba(17, 20, 18, 0.14);
   border-radius: 50%;
   object-fit: cover;
   object-position: center 18%;
   box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1;
 }
 
 .focus-strip {
@@ -580,24 +592,44 @@ h3 {
 .project-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
 }
 
 .project-links a {
   display: inline-flex;
-  min-height: 2.35rem;
-  align-items: center;
+  min-height: 2.75rem;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  padding: 0.55rem 0.75rem;
-  border: 1px solid var(--steel);
-  border-radius: 0.32rem;
-  background: var(--steel);
+  gap: 0.12rem;
+  padding: 0.62rem 0.85rem;
+  border: 1px solid var(--ink);
+  border-radius: 0.38rem;
+  background: var(--ink);
   color: #ffffff;
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   font-weight: 850;
+  line-height: 1.1;
+  text-decoration: none;
+  box-shadow: 0 0.45rem 1rem rgba(22, 28, 25, 0.12);
+}
+
+.project-links a span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+  background: var(--steel);
+  border-color: var(--steel);
+  transform: translateY(-1px);
 }
 
 .two-column,
@@ -684,8 +716,16 @@ h3 {
     place-items: center;
   }
 
-  .hero-portrait img {
+  .portrait-stage {
     width: min(70vw, 18rem);
+  }
+
+  .resume-button {
+    margin-top: 0;
+  }
+
+  .portrait-stage {
+    transform: none;
   }
 
   .section-heading {

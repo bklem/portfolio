@@ -97,7 +97,7 @@ function projectLinks(project) {
   return `
     <div class="project-links">
       ${project.links
-        .map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`)
+        .map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer"><span>View report</span>${link.label}</a>`)
         .join("")}
     </div>
   `;

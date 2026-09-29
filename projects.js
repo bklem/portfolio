@@ -213,15 +213,15 @@ const projects = [
   {
     title: "Grace Intelligence Sensor Logger Internship",
     summary:
-      "An internship project series focused on building a wearable sensor logging system, starting with Arduino pressure testing and progressing to an ESP32 Bluetooth data logger with a user-friendly desktop app.",
+      "A design-focused internship project series for a wearable sensor logging system, covering sensor selection, circuit design, soldered ESP32 hardware, embedded display code, Bluetooth communication, and a custom desktop app for recording data.",
     tags: ["Internship", "Hardware", "ESP32", "Software Engineering", "Sensors"],
     tools: ["Arduino Uno", "ESP32-S3", "M5Stick S3", "Bluetooth LE", "Python", "CSV Logging"],
     status: "Finished",
     context: "Grace Intelligence Internship",
     year: "2026",
-    role: "Tested pressure and vibration sensors, built Arduino and ESP32 circuits, integrated onboard IMU data, developed serial and Bluetooth logging workflows, and documented each stage through technical reports.",
+    role: "Compared pressure-sensor options, selected resistor values for stable readings, designed Arduino and ESP32 sensor circuits, soldered the M5Stick proto-hat hardware, wrote embedded code for display and IMU integration, and built Python serial and Bluetooth workflows for CSV data capture.",
     highlight:
-      "Combined hardware testing, embedded programming, wireless communication, and software usability into a system that records pressure, vibration, gyroscope, and accelerometer data.",
+      "Designed the full data path from physical sensor input to a user-facing logger: pressure and vibration sensing, onboard IMU readings, ESP32 display modes, Bluetooth transmission, and a desktop app that lets users record data without working directly in code.",
     links: [
       {
         label: "Pressure Sensor Testing",
